@@ -1,0 +1,240 @@
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/9/2014
+* Sass Version by Seth Coelen https://github.com/whatsnewsaes
+*/
+
+.map {
+	width: 100%;
+	height: 400px;
+
+	/* fixes potential theme css conflict */
+	img {
+	   max-width: inherit !important;
+	}
+}
+
+#content {
+	background-color: $light-grey;
+}
+
+#primary {
+	padding: 60px 0;
+}
+
+/*============================
+=            HOME            =
+============================*/
+
+.home {
+
+	#primary {
+		text-align: center;
+		background-color: $light-grey;
+	}
+
+	#banner {
+		height: 100vh;
+
+		.blurb {
+			
+			.after {
+			}
+		}
+	}
+}
+
+/*============================
+=            PAGE            =
+============================*/
+
+.page {
+
+	#primary {
+	}
+
+	.maincopy {
+
+		&.left {
+			text-align: left;
+		}
+	}
+
+	.sections {
+
+		ul {
+			margin-top: 20px;
+
+			 li {
+		 		margin-bottom: 1rem;
+				list-style-type: disc;
+				list-style-position: outside;
+				margin-left: 16px;
+			 }
+		}
+
+		.element {
+			text-align: left;
+
+			&:last-of-type {
+				margin-top: 30px;
+			}
+
+			@media (#{$bp-larger-than-tablet}) {
+				&:last-of-type {
+					margin-top: 0;
+				}
+			}
+
+			.link {
+				background: $primary-color;
+				display: block;
+				padding: 10px 15px;
+				text-decoration: none;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;  
+			}
+		}
+	}
+}
+
+/*===================================
+=            BLOG / NEWS            =
+===================================*/
+
+.blog {
+
+	.page-title {
+		margin-bottom: 60px;
+	}
+
+	article {
+
+		h2 {
+			font-size: 1.6rem;
+			margin: 20px 0;
+
+			a {
+				color: black;
+				text-decoration: none;
+			}
+		}
+
+		.more {
+			text-transform: uppercase;
+			color: black;
+			text-decoration: none;
+			font-weight: 700;
+			margin-top: 15px;
+			display: block;
+		}
+	}
+
+	.posts-navigation {
+		h2 {
+			display: none;
+		}
+
+		.nav-previous {
+			float: left;
+		}
+		.nav-next {
+			float: right;
+
+			a {
+				background-color: $secondary-color;
+			}
+		}
+
+		a {
+			background-color: $primary-color;
+			color: white;
+			padding: 10px 24px;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+	}
+}
+
+.single {
+
+	.entry-header {
+		text-align: center;
+		margin-bottom: 40px;
+
+		h1, h2 {
+			margin-bottom: 0;
+		}
+	}
+
+	.post-thumbnail {
+		margin-bottom: 30px;
+	}
+
+	.post-navigation {
+		h2 {
+			display: none;
+		}
+
+		.nav-previous {
+			float: left;
+		}
+		.nav-next {
+			float: right;
+
+			a {
+				background-color: $secondary-color;
+				content: "Next Story";
+			}
+		}
+
+		a {
+			content: "Previous Story";
+			background-color: $primary-color;
+			color: white;
+			padding: 10px 24px;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+	}
+}
+
+/*===============================
+=            CONTACT            =
+===============================*/
+
+.contact {
+
+	.gform_wrapper {
+	    margin: 0;
+
+		ul {
+
+			.gfield {
+				margin-top: 0;
+				padding-top: 0;
+				margin-bottom: 15px;
+			}
+		}
+
+		.gform_page_footer {
+
+			input[type="submit"], input[type="reset"], input[type="button"] {
+				display: inline-block;
+				color: white;
+				background-color: #784987;
+				border-radius: 0px;
+				border: none;
+
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}

@@ -2,9 +2,9 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bristles
+ * @package thecabin
  */
 
 ?>
@@ -15,6 +15,6 @@
 		<?php
 			the_content();
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
-</article><!-- #post-## -->
+</article>

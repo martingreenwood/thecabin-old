@@ -7,50 +7,61 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bristles
+ * @package thecabin
  */
 
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
+		<div class="container maincopy">
 			<?php
-			endif;
+			if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				if ( is_home() && ! is_front_page() ) : ?>
+					<header class="row">
+						<center>
+							<h1 class="page-title"><?php single_post_title(); ?></h1>
+						</center>
+					</header>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				<?php
+				endif;
+				?>
+				<div class="row">
+				<?php
+				/* Start the Loop */
+				$counter = 1;
+				while ( have_posts() ) : the_post();
 
-			endwhile;
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-			the_posts_navigation();
+					if ($counter % 4 === 0) echo '</div><div class="row">';
 
-		else :
+				$counter++; endwhile;
+				?>
+				</div>
+				<?php
+			endif; ?>
+		</div>
 
-			get_template_part( 'template-parts/content', 'none' );
+		<div class="container maincopy">
+			<div class="row">
+				<?php the_posts_navigation(); ?>
+			</div>
+		</div>
 
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
